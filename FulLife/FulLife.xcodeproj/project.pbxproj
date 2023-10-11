@@ -16,6 +16,8 @@
 		02A312162AD6EDEE009191AC /* FulLifeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A312152AD6EDEE009191AC /* FulLifeTests.swift */; };
 		02A312202AD6EDEE009191AC /* FulLifeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A3121F2AD6EDEE009191AC /* FulLifeUITests.swift */; };
 		02A312222AD6EDEE009191AC /* FulLifeUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A312212AD6EDEE009191AC /* FulLifeUITestsLaunchTests.swift */; };
+		02A3122F2AD71C41009191AC /* MoodTrackingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A3122E2AD71C41009191AC /* MoodTrackingView.swift */; };
+		02A312322AD7343D009191AC /* MoodHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A312312AD7343D009191AC /* MoodHistoryView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +50,8 @@
 		02A3121B2AD6EDEE009191AC /* FulLifeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FulLifeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		02A3121F2AD6EDEE009191AC /* FulLifeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FulLifeUITests.swift; sourceTree = "<group>"; };
 		02A312212AD6EDEE009191AC /* FulLifeUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FulLifeUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		02A3122E2AD71C41009191AC /* MoodTrackingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodTrackingView.swift; sourceTree = "<group>"; };
+		02A312312AD7343D009191AC /* MoodHistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodHistoryView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,12 +102,14 @@
 		02A311FE2AD6EDEB009191AC /* FulLife */ = {
 			isa = PBXGroup;
 			children = (
+				02A312302AD71DFB009191AC /* View */,
 				02A311FF2AD6EDEB009191AC /* FulLifeApp.swift */,
 				02A312012AD6EDEB009191AC /* ContentView.swift */,
 				02A312032AD6EDED009191AC /* Assets.xcassets */,
 				02A312082AD6EDED009191AC /* Persistence.swift */,
 				02A3120A2AD6EDED009191AC /* FulLife.xcdatamodeld */,
 				02A312052AD6EDED009191AC /* Preview Content */,
+				02A312312AD7343D009191AC /* MoodHistoryView.swift */,
 			);
 			path = FulLife;
 			sourceTree = "<group>";
@@ -131,6 +137,14 @@
 				02A312212AD6EDEE009191AC /* FulLifeUITestsLaunchTests.swift */,
 			);
 			path = FulLifeUITests;
+			sourceTree = "<group>";
+		};
+		02A312302AD71DFB009191AC /* View */ = {
+			isa = PBXGroup;
+			children = (
+				02A3122E2AD71C41009191AC /* MoodTrackingView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -263,10 +277,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				02A312322AD7343D009191AC /* MoodHistoryView.swift in Sources */,
 				02A312092AD6EDED009191AC /* Persistence.swift in Sources */,
 				02A312022AD6EDEB009191AC /* ContentView.swift in Sources */,
 				02A312002AD6EDEB009191AC /* FulLifeApp.swift in Sources */,
 				02A3120C2AD6EDED009191AC /* FulLife.xcdatamodeld in Sources */,
+				02A3122F2AD71C41009191AC /* MoodTrackingView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
