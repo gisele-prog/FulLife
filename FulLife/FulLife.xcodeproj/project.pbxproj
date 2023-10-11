@@ -1,0 +1,614 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		02A312002AD6EDEB009191AC /* FulLifeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A311FF2AD6EDEB009191AC /* FulLifeApp.swift */; };
+		02A312022AD6EDEB009191AC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A312012AD6EDEB009191AC /* ContentView.swift */; };
+		02A312042AD6EDED009191AC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 02A312032AD6EDED009191AC /* Assets.xcassets */; };
+		02A312072AD6EDED009191AC /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 02A312062AD6EDED009191AC /* Preview Assets.xcassets */; };
+		02A312092AD6EDED009191AC /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A312082AD6EDED009191AC /* Persistence.swift */; };
+		02A3120C2AD6EDED009191AC /* FulLife.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 02A3120A2AD6EDED009191AC /* FulLife.xcdatamodeld */; };
+		02A312162AD6EDEE009191AC /* FulLifeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A312152AD6EDEE009191AC /* FulLifeTests.swift */; };
+		02A312202AD6EDEE009191AC /* FulLifeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A3121F2AD6EDEE009191AC /* FulLifeUITests.swift */; };
+		02A312222AD6EDEE009191AC /* FulLifeUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A312212AD6EDEE009191AC /* FulLifeUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		02A312122AD6EDEE009191AC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 02A311F42AD6EDEB009191AC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 02A311FB2AD6EDEB009191AC;
+			remoteInfo = FulLife;
+		};
+		02A3121C2AD6EDEE009191AC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 02A311F42AD6EDEB009191AC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 02A311FB2AD6EDEB009191AC;
+			remoteInfo = FulLife;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		02A311FC2AD6EDEB009191AC /* FulLife.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FulLife.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		02A311FF2AD6EDEB009191AC /* FulLifeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FulLifeApp.swift; sourceTree = "<group>"; };
+		02A312012AD6EDEB009191AC /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		02A312032AD6EDED009191AC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		02A312062AD6EDED009191AC /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		02A312082AD6EDED009191AC /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
+		02A3120B2AD6EDED009191AC /* FulLife.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FulLife.xcdatamodel; sourceTree = "<group>"; };
+		02A312112AD6EDEE009191AC /* FulLifeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FulLifeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		02A312152AD6EDEE009191AC /* FulLifeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FulLifeTests.swift; sourceTree = "<group>"; };
+		02A3121B2AD6EDEE009191AC /* FulLifeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FulLifeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		02A3121F2AD6EDEE009191AC /* FulLifeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FulLifeUITests.swift; sourceTree = "<group>"; };
+		02A312212AD6EDEE009191AC /* FulLifeUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FulLifeUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		02A311F92AD6EDEB009191AC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		02A3120E2AD6EDEE009191AC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		02A312182AD6EDEE009191AC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		02A311F32AD6EDEB009191AC = {
+			isa = PBXGroup;
+			children = (
+				02A311FE2AD6EDEB009191AC /* FulLife */,
+				02A312142AD6EDEE009191AC /* FulLifeTests */,
+				02A3121E2AD6EDEE009191AC /* FulLifeUITests */,
+				02A311FD2AD6EDEB009191AC /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		02A311FD2AD6EDEB009191AC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				02A311FC2AD6EDEB009191AC /* FulLife.app */,
+				02A312112AD6EDEE009191AC /* FulLifeTests.xctest */,
+				02A3121B2AD6EDEE009191AC /* FulLifeUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		02A311FE2AD6EDEB009191AC /* FulLife */ = {
+			isa = PBXGroup;
+			children = (
+				02A311FF2AD6EDEB009191AC /* FulLifeApp.swift */,
+				02A312012AD6EDEB009191AC /* ContentView.swift */,
+				02A312032AD6EDED009191AC /* Assets.xcassets */,
+				02A312082AD6EDED009191AC /* Persistence.swift */,
+				02A3120A2AD6EDED009191AC /* FulLife.xcdatamodeld */,
+				02A312052AD6EDED009191AC /* Preview Content */,
+			);
+			path = FulLife;
+			sourceTree = "<group>";
+		};
+		02A312052AD6EDED009191AC /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				02A312062AD6EDED009191AC /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		02A312142AD6EDEE009191AC /* FulLifeTests */ = {
+			isa = PBXGroup;
+			children = (
+				02A312152AD6EDEE009191AC /* FulLifeTests.swift */,
+			);
+			path = FulLifeTests;
+			sourceTree = "<group>";
+		};
+		02A3121E2AD6EDEE009191AC /* FulLifeUITests */ = {
+			isa = PBXGroup;
+			children = (
+				02A3121F2AD6EDEE009191AC /* FulLifeUITests.swift */,
+				02A312212AD6EDEE009191AC /* FulLifeUITestsLaunchTests.swift */,
+			);
+			path = FulLifeUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		02A311FB2AD6EDEB009191AC /* FulLife */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 02A312252AD6EDEE009191AC /* Build configuration list for PBXNativeTarget "FulLife" */;
+			buildPhases = (
+				02A311F82AD6EDEB009191AC /* Sources */,
+				02A311F92AD6EDEB009191AC /* Frameworks */,
+				02A311FA2AD6EDEB009191AC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FulLife;
+			productName = FulLife;
+			productReference = 02A311FC2AD6EDEB009191AC /* FulLife.app */;
+			productType = "com.apple.product-type.application";
+		};
+		02A312102AD6EDEE009191AC /* FulLifeTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 02A312282AD6EDEE009191AC /* Build configuration list for PBXNativeTarget "FulLifeTests" */;
+			buildPhases = (
+				02A3120D2AD6EDEE009191AC /* Sources */,
+				02A3120E2AD6EDEE009191AC /* Frameworks */,
+				02A3120F2AD6EDEE009191AC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				02A312132AD6EDEE009191AC /* PBXTargetDependency */,
+			);
+			name = FulLifeTests;
+			productName = FulLifeTests;
+			productReference = 02A312112AD6EDEE009191AC /* FulLifeTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		02A3121A2AD6EDEE009191AC /* FulLifeUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 02A3122B2AD6EDEE009191AC /* Build configuration list for PBXNativeTarget "FulLifeUITests" */;
+			buildPhases = (
+				02A312172AD6EDEE009191AC /* Sources */,
+				02A312182AD6EDEE009191AC /* Frameworks */,
+				02A312192AD6EDEE009191AC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				02A3121D2AD6EDEE009191AC /* PBXTargetDependency */,
+			);
+			name = FulLifeUITests;
+			productName = FulLifeUITests;
+			productReference = 02A3121B2AD6EDEE009191AC /* FulLifeUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		02A311F42AD6EDEB009191AC /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1500;
+				LastUpgradeCheck = 1500;
+				TargetAttributes = {
+					02A311FB2AD6EDEB009191AC = {
+						CreatedOnToolsVersion = 15.0;
+					};
+					02A312102AD6EDEE009191AC = {
+						CreatedOnToolsVersion = 15.0;
+						TestTargetID = 02A311FB2AD6EDEB009191AC;
+					};
+					02A3121A2AD6EDEE009191AC = {
+						CreatedOnToolsVersion = 15.0;
+						TestTargetID = 02A311FB2AD6EDEB009191AC;
+					};
+				};
+			};
+			buildConfigurationList = 02A311F72AD6EDEB009191AC /* Build configuration list for PBXProject "FulLife" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 02A311F32AD6EDEB009191AC;
+			productRefGroup = 02A311FD2AD6EDEB009191AC /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				02A311FB2AD6EDEB009191AC /* FulLife */,
+				02A312102AD6EDEE009191AC /* FulLifeTests */,
+				02A3121A2AD6EDEE009191AC /* FulLifeUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		02A311FA2AD6EDEB009191AC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				02A312072AD6EDED009191AC /* Preview Assets.xcassets in Resources */,
+				02A312042AD6EDED009191AC /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		02A3120F2AD6EDEE009191AC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		02A312192AD6EDEE009191AC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		02A311F82AD6EDEB009191AC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				02A312092AD6EDED009191AC /* Persistence.swift in Sources */,
+				02A312022AD6EDEB009191AC /* ContentView.swift in Sources */,
+				02A312002AD6EDEB009191AC /* FulLifeApp.swift in Sources */,
+				02A3120C2AD6EDED009191AC /* FulLife.xcdatamodeld in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		02A3120D2AD6EDEE009191AC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				02A312162AD6EDEE009191AC /* FulLifeTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		02A312172AD6EDEE009191AC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				02A312222AD6EDEE009191AC /* FulLifeUITestsLaunchTests.swift in Sources */,
+				02A312202AD6EDEE009191AC /* FulLifeUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		02A312132AD6EDEE009191AC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 02A311FB2AD6EDEB009191AC /* FulLife */;
+			targetProxy = 02A312122AD6EDEE009191AC /* PBXContainerItemProxy */;
+		};
+		02A3121D2AD6EDEE009191AC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 02A311FB2AD6EDEB009191AC /* FulLife */;
+			targetProxy = 02A3121C2AD6EDEE009191AC /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		02A312232AD6EDEE009191AC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		02A312242AD6EDEE009191AC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		02A312262AD6EDEE009191AC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"FulLife/Preview Content\"";
+				DEVELOPMENT_TEAM = 8R5X63W8KB;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = project.FulLife;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		02A312272AD6EDEE009191AC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"FulLife/Preview Content\"";
+				DEVELOPMENT_TEAM = 8R5X63W8KB;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = project.FulLife;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		02A312292AD6EDEE009191AC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 8R5X63W8KB;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = project.FulLifeTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FulLife.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/FulLife";
+			};
+			name = Debug;
+		};
+		02A3122A2AD6EDEE009191AC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 8R5X63W8KB;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = project.FulLifeTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FulLife.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/FulLife";
+			};
+			name = Release;
+		};
+		02A3122C2AD6EDEE009191AC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 8R5X63W8KB;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = project.FulLifeUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = FulLife;
+			};
+			name = Debug;
+		};
+		02A3122D2AD6EDEE009191AC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 8R5X63W8KB;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = project.FulLifeUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = FulLife;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		02A311F72AD6EDEB009191AC /* Build configuration list for PBXProject "FulLife" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				02A312232AD6EDEE009191AC /* Debug */,
+				02A312242AD6EDEE009191AC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		02A312252AD6EDEE009191AC /* Build configuration list for PBXNativeTarget "FulLife" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				02A312262AD6EDEE009191AC /* Debug */,
+				02A312272AD6EDEE009191AC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		02A312282AD6EDEE009191AC /* Build configuration list for PBXNativeTarget "FulLifeTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				02A312292AD6EDEE009191AC /* Debug */,
+				02A3122A2AD6EDEE009191AC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		02A3122B2AD6EDEE009191AC /* Build configuration list for PBXNativeTarget "FulLifeUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				02A3122C2AD6EDEE009191AC /* Debug */,
+				02A3122D2AD6EDEE009191AC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		02A3120A2AD6EDED009191AC /* FulLife.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				02A3120B2AD6EDED009191AC /* FulLife.xcdatamodel */,
+			);
+			currentVersion = 02A3120B2AD6EDED009191AC /* FulLife.xcdatamodel */;
+			path = FulLife.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 02A311F42AD6EDEB009191AC /* Project object */;
+}
