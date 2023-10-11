@@ -1,5 +1,5 @@
 //
-//  MoodHistoryView.swift
+//  MoodTrackingView.swift
 //  FulLife
 //
 //  Created by Joie Mukamisha on 10/11/23.
@@ -22,26 +22,22 @@ struct MoodHistoryView: View {
                 ForEach(moodHistory) { item in
                     VStack(alignment: .leading) {
                         Text("Mood: \(item.mood ?? "")")
-                        Text("Date and Time: \(item.timestamp!, formatter: itemFormatter)")
+                        Text("Date and Time: \(item.timestamp!, formatter: ItemFormatter.dateFormatter)")
+                        if let notes = item.notes {
+                            Text("Notes: \(notes)")
+                        }
                     }
                 }
+
             }
             .navigationBarTitle("Mood History")
         }
     }
-    
-    Button(action: {
-        // Navigate to the MoodHistoryView
-        NavigationLink("Mood History", destination: MoodHistoryView())
-    }) {
-        Text("View Mood History")
+}
+
+struct MoodHistoryView_Previews: PreviewProvider {
+    static var previews: some View {
+        MoodHistoryView()
     }
-
 }
 
-
-
-
-#Preview {
-    MoodHistoryView()
-}

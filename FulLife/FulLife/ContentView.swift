@@ -1,8 +1,10 @@
-
-//  ContentView.swift
+//
+//  MoodTrackingView.swift
 //  FulLife
 //
-//  Created by Consultant on 10/11/23.
+//  Created by Joie Mukamisha on 10/11/23.
+//
+
 
 
 import SwiftUI
@@ -15,6 +17,8 @@ struct ContentView: View {
         sortDescriptors: [NSSortDescriptor(keyPath: \Item.timestamp, ascending: true)],
         animation: .default)
     private var items: FetchedResults<Item>
+
+    @State private var isShowingMoodTracking = false
 
     var body: some View {
         NavigationView {
@@ -35,12 +39,20 @@ struct ContentView: View {
                     EditButton()
                 }
                 ToolbarItem {
-                    NavigationLink(destination: MoodTrackingView().environment(\.managedObjectContext, viewContext)) {
+                    Button(action: {
+                        isShowingMoodTracking = true
+                    }) {
                         Label("Add Mood", systemImage: "plus")
                     }
                 }
+                ToolbarItem {
+                    NavigationLink("Mood History", destination: MoodHistoryView())
+                }
             }
             Text("Select a mood")
+        }
+        .sheet(isPresented: $isShowingMoodTracking) {
+            MoodTrackingView().environment(\.managedObjectContext, viewContext)
         }
     }
 
@@ -58,9 +70,9 @@ struct ContentView: View {
     }
 }
 
-private var itemFormatter: DateFormatter {
+private let itemFormatter: DateFormatter = {
     let formatter = DateFormatter()
     formatter.dateStyle = .short
     formatter.timeStyle = .medium
     return formatter
-}
+}()

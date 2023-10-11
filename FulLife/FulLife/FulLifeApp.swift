@@ -19,11 +19,24 @@ import SwiftUI
 //    }
 //}
 
+//@main
+//struct FulLifeApp: App {
+//    var body: some Scene {
+//        WindowGroup {
+//            MoodTrackingView()
+//        }
+//    }
+//}
 @main
-struct YourApp: App {
+struct FulLifeApp: App {
+    let persistenceController = PersistenceController.shared
+
     var body: some Scene {
         WindowGroup {
-            MoodTrackingView()
+            NavigationView {
+                MoodTrackingView()
+                    .environment(\.managedObjectContext, persistenceController.container.viewContext)
+            }
         }
     }
 }
