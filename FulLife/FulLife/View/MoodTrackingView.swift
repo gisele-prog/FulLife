@@ -6,60 +6,39 @@
 //
 
 import SwiftUI
+import CoreData
+
 
 struct MoodTrackingView: View {
     @Environment(\.managedObjectContext) private var viewContext
-    @State private var selectedMood: String = ""
-    @State private var selectedDate = Date()
-    @State private var additionalNotes = ""
-
-    let moodOptions = ["Happy", "Sad", "Anger", "Fear", "Excited", "I don't know"]
+    @StateObject private var viewModel = MoodTrackingViewModel()
 
     var body: some View {
         NavigationView {
             Form {
                 Section(header: Text("Mood Tracking")) {
-                    Picker("Mood", selection: $selectedMood) {
-                        ForEach(moodOptions, id: \.self) {
+                    Picker("Mood", selection: $viewModel.selectedMood) {
+                        ForEach(viewModel.moodOptions, id: \.self) {
                             Text($0)
                         }
                     }
-                    .pickerStyle(MenuPickerStyle()) // Use MenuPickerStyle to allow for more options
+                    .pickerStyle(MenuPickerStyle())
 
-                    DatePicker("Date and Time", selection: $selectedDate, in: ...Date(), displayedComponents: [.date, .hourAndMinute])
+                    DatePicker("Date and Time", selection: $viewModel.selectedDate, in: ...Date(), displayedComponents: [.date, .hourAndMinute])
                         .labelsHidden()
 
-                    TextField("Additional Notes or Tags", text: $additionalNotes)
+                    TextField("Additional Notes or Tags", text: $viewModel.additionalNotes)
                 }
 
                 Button(action: {
-                    // Create a new item in Core Data
-                    let newItem = Item(context: viewContext)
-                    newItem.mood = selectedMood
-                    newItem.timestamp = selectedDate
-                    newItem.notes = additionalNotes
-
-                    // Save the changes
-                    do {
-                        try viewContext.save()
-                    } catch {
-                        // Handle the error appropriately
-                        print("Error saving: \(error)")
-                    }
+                    viewModel.saveMoodItem(viewContext: viewContext)
                 }) {
                     Text("Save Mood")
                 }
-
 
                 NavigationLink("View Mood History", destination: MoodHistoryView())
             }
             .navigationBarTitle("Mood Tracking")
         }
-    }
-}
-
-struct MoodTrackingView_Previews: PreviewProvider {
-    static var previews: some View {
-        MoodTrackingView()
     }
 }

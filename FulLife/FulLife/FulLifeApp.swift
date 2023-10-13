@@ -27,16 +27,27 @@ import SwiftUI
 //        }
 //    }
 //}
+//@main
+//struct FulLifeApp: App {
+//    let persistenceController = PersistenceController.shared
+//
+//    var body: some Scene {
+//        WindowGroup {
+//            NavigationView {
+//                MoodTrackingView()
+//                    .environment(\.managedObjectContext, persistenceController.container.viewContext)
+//            }
+//        }
+//    }
+//}
 @main
 struct FulLifeApp: App {
     let persistenceController = PersistenceController.shared
 
     var body: some Scene {
         WindowGroup {
-            NavigationView {
-                MoodTrackingView()
-                    .environment(\.managedObjectContext, persistenceController.container.viewContext)
-            }
+            MoodTrackingView()
+                .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
     }
 }

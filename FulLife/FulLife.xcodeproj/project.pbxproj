@@ -19,6 +19,8 @@
 		02A3122F2AD71C41009191AC /* MoodTrackingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A3122E2AD71C41009191AC /* MoodTrackingView.swift */; };
 		02A312322AD7343D009191AC /* MoodHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A312312AD7343D009191AC /* MoodHistoryView.swift */; };
 		02A312342AD73693009191AC /* ItemFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A312332AD73693009191AC /* ItemFormatter.swift */; };
+		02A312482AD8D7D3009191AC /* MoodHistoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A312472AD8D7D3009191AC /* MoodHistoryViewModel.swift */; };
+		02A3124A2AD8DCB5009191AC /* MoodTrackingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A312492AD8DCB5009191AC /* MoodTrackingViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +56,8 @@
 		02A3122E2AD71C41009191AC /* MoodTrackingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodTrackingView.swift; sourceTree = "<group>"; };
 		02A312312AD7343D009191AC /* MoodHistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodHistoryView.swift; sourceTree = "<group>"; };
 		02A312332AD73693009191AC /* ItemFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemFormatter.swift; sourceTree = "<group>"; };
+		02A312472AD8D7D3009191AC /* MoodHistoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodHistoryViewModel.swift; sourceTree = "<group>"; };
+		02A312492AD8DCB5009191AC /* MoodTrackingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodTrackingViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +116,8 @@
 				02A3120A2AD6EDED009191AC /* FulLife.xcdatamodeld */,
 				02A312052AD6EDED009191AC /* Preview Content */,
 				02A312332AD73693009191AC /* ItemFormatter.swift */,
+				02A312472AD8D7D3009191AC /* MoodHistoryViewModel.swift */,
+				02A312492AD8DCB5009191AC /* MoodTrackingViewModel.swift */,
 			);
 			path = FulLife;
 			sourceTree = "<group>";
@@ -282,7 +288,9 @@
 			files = (
 				02A312322AD7343D009191AC /* MoodHistoryView.swift in Sources */,
 				02A312092AD6EDED009191AC /* Persistence.swift in Sources */,
+				02A312482AD8D7D3009191AC /* MoodHistoryViewModel.swift in Sources */,
 				02A312342AD73693009191AC /* ItemFormatter.swift in Sources */,
+				02A3124A2AD8DCB5009191AC /* MoodTrackingViewModel.swift in Sources */,
 				02A312022AD6EDEB009191AC /* ContentView.swift in Sources */,
 				02A312002AD6EDEB009191AC /* FulLifeApp.swift in Sources */,
 				02A3120C2AD6EDED009191AC /* FulLife.xcdatamodeld in Sources */,
