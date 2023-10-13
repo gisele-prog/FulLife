@@ -28,13 +28,22 @@ struct MoodHistoryView: View {
                         if let notes = item.notes {
                             Text("Notes: \(notes)")
                         }
-
-           }
+                    }
                 }
-                .onDelete(perform: deleteItems) //  to enable deletion
+                .onDelete(perform: deleteItems)
             }
             .navigationBarTitle("My Journal")
-            .navigationBarItems(trailing: EditButton()) // Enable Edit mode
+            .navigationBarItems(trailing: EditButton())
+        }
+        .navigationViewStyle(StackNavigationViewStyle()) // Use this if you want to support older devices
+        .navigationBarTitleDisplayMode(.inline) // Use this to display the title inline
+
+        NavigationLink(destination: Inspiration()) {
+            Text("Go to Inspiration")
+                .padding()
+                .background(Color.blue)
+                .foregroundColor(.white)
+                .cornerRadius(8)
         }
     }
 
