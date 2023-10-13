@@ -17,7 +17,7 @@ struct MoodTrackingView: View {
         NavigationView {
             Form {
                 Section(header: Text("Mood Tracking")) {
-                    Picker("Mood", selection: $viewModel.selectedMood) {
+                    Picker("How are you?", selection: $viewModel.selectedMood) {
                         ForEach(viewModel.moodOptions, id: \.self) {
                             Text($0)
                         }
@@ -33,10 +33,10 @@ struct MoodTrackingView: View {
                 Button(action: {
                     viewModel.saveMoodItem(viewContext: viewContext)
                 }) {
-                    Text("Save Mood")
+                    Text("Save")
                 }
 
-                NavigationLink("View Mood History", destination: MoodHistoryView())
+                NavigationLink("View My Journal ", destination: MoodHistoryView())
             }
             .navigationBarTitle("Mood Tracking")
         }

@@ -2,7 +2,7 @@
 //  MoodTrackingViewModel.swift
 //  FulLife
 //
-//  Created by Consultant on 10/12/23.
+//  Created by Joie Mukamisha on 10/12/23.
 //
 
 import SwiftUI
@@ -14,7 +14,7 @@ class MoodTrackingViewModel: ObservableObject {
     @Published var selectedDate = Date()
     @Published var additionalNotes = ""
 
-    let moodOptions = ["Happy", "Sad", "Anger", "Fear", "Excited", "I don't know"]
+    let moodOptions = ["Happy", "Sad", "Anger", "Fear", "Excited", "Tender", "I don't know"]
 
     func saveMoodItem(viewContext: NSManagedObjectContext) {
         let newItem = Item(context: viewContext)

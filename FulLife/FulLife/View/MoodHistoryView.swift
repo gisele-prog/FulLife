@@ -17,7 +17,6 @@ struct MoodHistoryView: View {
         animation: .default) private var moodHistory: FetchedResults<Item>
 
     @State private var selectedItem: Item?
-    @State private var isEditViewPresented = false
 
     var body: some View {
         NavigationView {
@@ -30,75 +29,20 @@ struct MoodHistoryView: View {
                             Text("Notes: \(notes)")
                         }
 
-                        HStack {
-                            Button(action: {
-                                selectedItem = item
-                                isEditViewPresented = true
-                            }) {
-                                Text("Edit")
-                            }
-
-                            Button(action: {
-                                viewContext.delete(item)
-                                try? viewContext.save()
-                            }) {
-                                Text("Delete")
-                                    .foregroundColor(.red)
-                            }
-                        }
-                    }
+           }
                 }
+                .onDelete(perform: deleteItems) //  to enable deletion
             }
-            .navigationBarTitle("Mood History")
-        }
-        .sheet(isPresented: $isEditViewPresented) {
-            MoodEditView(item: $selectedItem, isEditViewPresented: $isEditViewPresented)
+            .navigationBarTitle("My Journal")
+            .navigationBarItems(trailing: EditButton()) // Enable Edit mode
         }
     }
-}
 
-struct MoodEditView: View {
-    @Binding var item: Item?
-    @Binding var isEditViewPresented: Bool
-
-    @State private var editedMood: String = ""
-    @State private var editedNotes: String = ""
-
-    var body: some View {
-        VStack {
-            TextField("Mood", text: $editedMood)
-                .textFieldStyle(RoundedBorderTextFieldStyle())
-                .padding()
-
-            TextEditor(text: $editedNotes)
-                .frame(minHeight: 100)
-                .padding()
-
-            Button("Save") {
-                if let item = item, !editedMood.isEmpty {
-                    item.mood = editedMood
-                    item.notes = editedNotes
-                    try? item.managedObjectContext?.save()
-                }
-                isEditViewPresented = false
-            }
-            .padding()
-
-            Button("Delete") {
-                if let item = item {
-                    item.managedObjectContext?.delete(item)
-                    try? item.managedObjectContext?.save()
-                }
-                isEditViewPresented = false
-            }
-            .foregroundColor(.red)
-            .padding()
+    func deleteItems(at offsets: IndexSet) {
+        for index in offsets {
+            let item = moodHistory[index]
+            viewContext.delete(item)
         }
-        .onAppear {
-            if let item = item {
-                editedMood = item.mood ?? ""
-                editedNotes = item.notes ?? ""
-            }
-        }
+        try? viewContext.save()
     }
 }
