@@ -9,12 +9,13 @@ import SwiftUI
 
 struct Inspiration: View {
     @State private var quotes: [Quote] = []
+    @State private var isChartViewPresented = false // State to control chart view presentation
 
     var body: some View {
         NavigationView {
             List(quotes, id: \.q) { quote in
                 VStack(alignment: .leading) {
-                    Text("Quote: \(quote.q)")
+                    Text("\(quote.q)")
                     Text("Author: \(quote.a)")
                 }
             }
@@ -26,7 +27,21 @@ struct Inspiration: View {
                 }
             }
             .navigationBarTitle("Inspirational Quotes")
+            .navigationBarItems(trailing:
+                Button("View Mood Chart") {
+                    // This action opens the MoodPieChartView
+                    isChartViewPresented.toggle()
+                }
+            )
         }
+        .navigationViewStyle(StackNavigationViewStyle())
+        .navigationBarTitleDisplayMode(.inline)
+        .background(
+            NavigationLink(destination: MoodPieChartView(), isActive: $isChartViewPresented) {
+                EmptyView()
+            }
+            .hidden()
+        )
     }
 }
 

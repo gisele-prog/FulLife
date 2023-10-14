@@ -7,6 +7,8 @@
 
 
 
+
+
 import SwiftUI
 import CoreData
 
@@ -22,24 +24,33 @@ struct MoodHistoryView: View {
         NavigationView {
             List {
                 ForEach(moodHistory, id: \.self) { item in
-                    VStack(alignment: .leading) {
-                        Text("Mood: \(item.mood ?? "")")
+                    VStack(alignment: .leading, spacing: 8) {
+                        
                         Text("Date and Time: \(item.timestamp!, formatter: ItemFormatter.dateFormatter)")
+                            .font(.subheadline)
+                        Text("Mood: \(item.mood ?? "Unknown")")
+                            .font(.headline)
+                        
                         if let notes = item.notes {
                             Text("Notes: \(notes)")
+                                .font(.body)
                         }
                     }
+                    .padding(8)
+                    .background(Color(UIColor.systemBackground))
+                    .cornerRadius(10)
                 }
                 .onDelete(perform: deleteItems)
+                .listRowSeparator(.hidden) // Remove list separators
             }
             .navigationBarTitle("My Journal")
             .navigationBarItems(trailing: EditButton())
         }
-        .navigationViewStyle(StackNavigationViewStyle()) // Use this if you want to support older devices
-        .navigationBarTitleDisplayMode(.inline) // Use this to display the title inline
+        .navigationViewStyle(StackNavigationViewStyle())
+        .navigationBarTitleDisplayMode(.inline)
 
         NavigationLink(destination: Inspiration()) {
-            Text("Go to Inspiration")
+            Text("Explore Inspirations")
                 .padding()
                 .background(Color.blue)
                 .foregroundColor(.white)
