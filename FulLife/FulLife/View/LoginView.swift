@@ -13,6 +13,7 @@ struct LoginView: View {
     @State private var password: String = ""
     @State private var errorText: String?
     @State private var navigateToHome: Bool = false
+    @State private var isSettingsPresented: Bool = false
 
     var body: some View {
         NavigationView {
@@ -55,6 +56,7 @@ struct LoginView: View {
             }
             .padding()
         }
+        
     }
 
     func handleError(_ error: Error?) {

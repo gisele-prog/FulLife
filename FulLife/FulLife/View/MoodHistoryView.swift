@@ -56,7 +56,7 @@ struct MoodHistoryView: View {
                 .onDelete(perform: deleteItems)
             }
             .listRowSeparator(.hidden)
-            .navigationBarTitle("My Journal")
+            .navigationBarTitle("Mood History")
             .navigationBarItems(trailing: EditButton())
         }
         .navigationViewStyle(StackNavigationViewStyle())

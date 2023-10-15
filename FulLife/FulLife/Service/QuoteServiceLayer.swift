@@ -2,7 +2,7 @@
 //  QuoteServiceLayer.swift
 //  FulLife
 //
-//  Created by Consultant on 10/13/23.
+//  Created by Joie Mukamisha on 10/13/23.
 //
 
 import Foundation
