@@ -41,12 +41,17 @@ struct LoginView: View {
                     Text("Register")
                         .frame(maxWidth: .infinity)
                         .padding()
-                        .background(Color.red)
-                        .foregroundColor(.black)
+                        .background(Color.purple)
+                        .foregroundColor(.white)
                         .cornerRadius(8)
                 }
 
-                NavigationLink("", destination: HomeView(), isActive: $navigateToHome).hidden()
+                NavigationLink(
+                    destination: HomeView(),
+                    isActive: $navigateToHome
+                ) {
+                    EmptyView()
+                }
             }
             .padding()
         }
