@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Firebase
 
 //@main
 //struct FulLifeApp: App {
@@ -43,10 +44,13 @@ import SwiftUI
 @main
 struct FulLifeApp: App {
     let persistenceController = PersistenceController.shared
+    init() {
+            FirebaseApp.configure()
+     }
 
     var body: some Scene {
         WindowGroup {
-            MoodTrackingView()
+            LoginView()
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
     }

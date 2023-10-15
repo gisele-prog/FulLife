@@ -26,6 +26,14 @@
 		02A312552AD99A51009191AC /* InspirationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A312542AD99A51009191AC /* InspirationView.swift */; };
 		02A312582ADAD335009191AC /* SwiftUICharts in Frameworks */ = {isa = PBXBuildFile; productRef = 02A312572ADAD335009191AC /* SwiftUICharts */; };
 		02A3125A2ADAD426009191AC /* MoodCHartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A312592ADAD426009191AC /* MoodCHartView.swift */; };
+		02A3125C2ADB18FF009191AC /* MoodchartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A3125B2ADB18FF009191AC /* MoodchartViewModel.swift */; };
+		02A3125E2ADC239D009191AC /* InspirationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A3125D2ADC239D009191AC /* InspirationViewModel.swift */; };
+		02A312632ADC4317009191AC /* MoodChartModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A312622ADC4317009191AC /* MoodChartModel.swift */; };
+		02A312652ADC496A009191AC /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A312642ADC496A009191AC /* HomeView.swift */; };
+		02A312722ADC5F7E009191AC /* FirebaseFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A312712ADC5F7E009191AC /* FirebaseFile.swift */; };
+		02A312762ADC63AD009191AC /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A312752ADC63AD009191AC /* LoginView.swift */; };
+		02A312782ADC69F8009191AC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 02A312772ADC69F8009191AC /* GoogleService-Info.plist */; };
+		02A3127A2ADC6C89009191AC /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 02A312792ADC6C89009191AC /* FirebaseAuth */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +75,13 @@
 		02A312522AD99956009191AC /* QuoteServiceLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteServiceLayer.swift; sourceTree = "<group>"; };
 		02A312542AD99A51009191AC /* InspirationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InspirationView.swift; sourceTree = "<group>"; };
 		02A312592ADAD426009191AC /* MoodCHartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodCHartView.swift; sourceTree = "<group>"; };
+		02A3125B2ADB18FF009191AC /* MoodchartViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodchartViewModel.swift; sourceTree = "<group>"; };
+		02A3125D2ADC239D009191AC /* InspirationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InspirationViewModel.swift; sourceTree = "<group>"; };
+		02A312622ADC4317009191AC /* MoodChartModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodChartModel.swift; sourceTree = "<group>"; };
+		02A312642ADC496A009191AC /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		02A312712ADC5F7E009191AC /* FirebaseFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseFile.swift; sourceTree = "<group>"; };
+		02A312752ADC63AD009191AC /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		02A312772ADC69F8009191AC /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +90,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				02A312582ADAD335009191AC /* SwiftUICharts in Frameworks */,
+				02A3127A2ADC6C89009191AC /* FirebaseAuth in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -118,20 +134,21 @@
 		02A311FE2AD6EDEB009191AC /* FulLife */ = {
 			isa = PBXGroup;
 			children = (
+				02A312772ADC69F8009191AC /* GoogleService-Info.plist */,
+				02A312612ADC2522009191AC /* ViewModel */,
 				02A312302AD71DFB009191AC /* View */,
 				02A311FF2AD6EDEB009191AC /* FulLifeApp.swift */,
-				02A312012AD6EDEB009191AC /* ContentView.swift */,
 				02A312032AD6EDED009191AC /* Assets.xcassets */,
 				02A312082AD6EDED009191AC /* Persistence.swift */,
 				02A3120A2AD6EDED009191AC /* FulLife.xcdatamodeld */,
 				02A312052AD6EDED009191AC /* Preview Content */,
 				02A312332AD73693009191AC /* ItemFormatter.swift */,
-				02A312472AD8D7D3009191AC /* MoodHistoryViewModel.swift */,
-				02A312492AD8DCB5009191AC /* MoodTrackingViewModel.swift */,
 				02A312502AD99933009191AC /* QuotesModel.swift */,
 				02A312522AD99956009191AC /* QuoteServiceLayer.swift */,
-				02A312542AD99A51009191AC /* InspirationView.swift */,
-				02A312592ADAD426009191AC /* MoodCHartView.swift */,
+				02A312622ADC4317009191AC /* MoodChartModel.swift */,
+				02A312642ADC496A009191AC /* HomeView.swift */,
+				02A312712ADC5F7E009191AC /* FirebaseFile.swift */,
+				02A312752ADC63AD009191AC /* LoginView.swift */,
 			);
 			path = FulLife;
 			sourceTree = "<group>";
@@ -164,10 +181,24 @@
 		02A312302AD71DFB009191AC /* View */ = {
 			isa = PBXGroup;
 			children = (
+				02A312012AD6EDEB009191AC /* ContentView.swift */,
+				02A312592ADAD426009191AC /* MoodCHartView.swift */,
+				02A312542AD99A51009191AC /* InspirationView.swift */,
 				02A312312AD7343D009191AC /* MoodHistoryView.swift */,
 				02A3122E2AD71C41009191AC /* MoodTrackingView.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		02A312612ADC2522009191AC /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				02A312472AD8D7D3009191AC /* MoodHistoryViewModel.swift */,
+				02A312492AD8DCB5009191AC /* MoodTrackingViewModel.swift */,
+				02A3125B2ADB18FF009191AC /* MoodchartViewModel.swift */,
+				02A3125D2ADC239D009191AC /* InspirationViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -188,6 +219,7 @@
 			name = FulLife;
 			packageProductDependencies = (
 				02A312572ADAD335009191AC /* SwiftUICharts */,
+				02A312792ADC6C89009191AC /* FirebaseAuth */,
 			);
 			productName = FulLife;
 			productReference = 02A311FC2AD6EDEB009191AC /* FulLife.app */;
@@ -263,6 +295,7 @@
 			mainGroup = 02A311F32AD6EDEB009191AC;
 			packageReferences = (
 				02A312562ADAD335009191AC /* XCRemoteSwiftPackageReference "ChartView" */,
+				02A312662ADC5E65009191AC /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 			);
 			productRefGroup = 02A311FD2AD6EDEB009191AC /* Products */;
 			projectDirPath = "";
@@ -282,6 +315,7 @@
 			files = (
 				02A312072AD6EDED009191AC /* Preview Assets.xcassets in Resources */,
 				02A312042AD6EDED009191AC /* Assets.xcassets in Resources */,
+				02A312782ADC69F8009191AC /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -306,17 +340,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				02A3125C2ADB18FF009191AC /* MoodchartViewModel.swift in Sources */,
+				02A312632ADC4317009191AC /* MoodChartModel.swift in Sources */,
 				02A312322AD7343D009191AC /* MoodHistoryView.swift in Sources */,
 				02A312532AD99956009191AC /* QuoteServiceLayer.swift in Sources */,
 				02A312092AD6EDED009191AC /* Persistence.swift in Sources */,
+				02A312652ADC496A009191AC /* HomeView.swift in Sources */,
 				02A312512AD99933009191AC /* QuotesModel.swift in Sources */,
 				02A3125A2ADAD426009191AC /* MoodCHartView.swift in Sources */,
+				02A3125E2ADC239D009191AC /* InspirationViewModel.swift in Sources */,
 				02A312482AD8D7D3009191AC /* MoodHistoryViewModel.swift in Sources */,
 				02A312342AD73693009191AC /* ItemFormatter.swift in Sources */,
 				02A3124A2AD8DCB5009191AC /* MoodTrackingViewModel.swift in Sources */,
 				02A312022AD6EDEB009191AC /* ContentView.swift in Sources */,
 				02A312002AD6EDEB009191AC /* FulLifeApp.swift in Sources */,
+				02A312722ADC5F7E009191AC /* FirebaseFile.swift in Sources */,
 				02A3120C2AD6EDED009191AC /* FulLife.xcdatamodeld in Sources */,
+				02A312762ADC63AD009191AC /* LoginView.swift in Sources */,
 				02A3122F2AD71C41009191AC /* MoodTrackingView.swift in Sources */,
 				02A312552AD99A51009191AC /* InspirationView.swift in Sources */,
 			);
@@ -658,6 +698,14 @@
 				minimumVersion = 1.5.5;
 			};
 		};
+		02A312662ADC5E65009191AC /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.16.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -665,6 +713,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 02A312562ADAD335009191AC /* XCRemoteSwiftPackageReference "ChartView" */;
 			productName = SwiftUICharts;
+		};
+		02A312792ADC6C89009191AC /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 02A312662ADC5E65009191AC /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
 		};
 /* End XCSwiftPackageProductDependency section */
 

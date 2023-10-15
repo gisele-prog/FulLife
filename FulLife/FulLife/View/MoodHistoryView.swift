@@ -6,9 +6,6 @@
 //
 
 
-
-
-
 import SwiftUI
 import CoreData
 
@@ -25,24 +22,40 @@ struct MoodHistoryView: View {
             List {
                 ForEach(moodHistory, id: \.self) { item in
                     VStack(alignment: .leading, spacing: 8) {
-                        
-                        Text("Date and Time: \(item.timestamp!, formatter: ItemFormatter.dateFormatter)")
-                            .font(.subheadline)
-                        Text("Mood: \(item.mood ?? "Unknown")")
+                        Text("My mood:")
                             .font(.headline)
+                            .foregroundColor(.blue)
+
+                        Text(item.mood ?? "Unknown")
+                            .font(.title)
                         
                         if let notes = item.notes {
-                            Text("Notes: \(notes)")
+                            Text("My mood description:")
+                                .font(.headline)
+                                .foregroundColor(.blue)
+                            Text(notes)
                                 .font(.body)
                         }
+                        
+                        Text("Date and Time:")
+                            .font(.headline)
+                            .foregroundColor(.blue)
+
+                        Text("\(item.timestamp!, formatter: ItemFormatter.dateFormatter)")
+                            .font(.subheadline)
+                            .foregroundColor(.gray)
                     }
                     .padding(8)
                     .background(Color(UIColor.systemBackground))
                     .cornerRadius(10)
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 10)
+                            .stroke(Color.blue, lineWidth: 1)
+                    )
                 }
                 .onDelete(perform: deleteItems)
-                .listRowSeparator(.hidden) // Remove list separators
             }
+            .listRowSeparator(.hidden)
             .navigationBarTitle("My Journal")
             .navigationBarItems(trailing: EditButton())
         }

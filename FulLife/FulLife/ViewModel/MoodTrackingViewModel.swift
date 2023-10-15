@@ -14,7 +14,7 @@ class MoodTrackingViewModel: ObservableObject {
     @Published var selectedDate = Date()
     @Published var additionalNotes = ""
 
-    let moodOptions = ["Happy", "Sad", "Anger", "Fear", "Excited", "Tender", "I don't know"]
+    let moodOptions = ["Happy", "Sad", "Angry", "Fear", "Excited", "Loved", "I don't know"]
 
     func saveMoodItem(viewContext: NSManagedObjectContext) {
         let newItem = Item(context: viewContext)
