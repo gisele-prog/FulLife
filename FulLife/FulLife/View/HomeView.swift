@@ -2,10 +2,8 @@
 //  HomeView.swift
 //  FulLife
 //
-//  Created by Consultant on 10/15/23.
+//  Created by Joie Mukamisha on 10/15/23.
 //
-
-
 
 
 import SwiftUI
@@ -41,21 +39,6 @@ struct HomeView: View {
             }
             .tag(2)
 
-            NavigationView {
-                MoodPieChartView()
-            }
-            .tabItem {
-                Label("Mood Chart", systemImage: "chart.pie.fill")
-            }
-            .tag(3)
-
-            NavigationView {
-                UIKitSettingsView(isSettingsPresented: $isSettingsPresented) // Add the UIKitSettingsView to your tab
-            }
-            .tabItem {
-                Label("Settings", systemImage: "gear")
-            }
-            .tag(4)
         }
         
     }

@@ -2,15 +2,17 @@
 //  FulLifeApp.swift
 //  FulLife
 //
-//  Created by Joie Mukamisha on 10/11/23.
+//  Created by Joie Gisele Mukamisha on 10/11/23.
 //
 
 import SwiftUI
 import Firebase
 
 
+
 @main
 struct FulLifeApp: App {
+    
     let persistenceController = PersistenceController.shared
     init() {
             FirebaseApp.configure()
@@ -23,3 +25,4 @@ struct FulLifeApp: App {
         }
     }
 }
+

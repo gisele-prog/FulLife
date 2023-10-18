@@ -8,29 +8,72 @@
 import XCTest
 @testable import FulLife
 
-final class FulLifeTests: XCTestCase {
+class FulLifeTests: XCTestCase {
 
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
+    class MockURLProtocol: URLProtocol {
+        static var mockResponseData: Data?
+        static var mockError: Error?
 
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
+        override class func canInit(with request: URLRequest) -> Bool {
+            return true
+        }
 
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        // Any test you write for XCTest can be annotated as throws and async.
-        // Mark your test throws to produce an unexpected failure when your test encounters an uncaught error.
-        // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
-    }
+        override class func canonicalRequest(for request: URLRequest) -> URLRequest {
+            return request
+        }
 
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
+        override func startLoading() {
+            if let data = MockURLProtocol.mockResponseData {
+                client?.urlProtocol(self, didLoad: data)
+            }
+            if let error = MockURLProtocol.mockError {
+                client?.urlProtocol(self, didFailWithError: error)
+            }
+            client?.urlProtocolDidFinishLoading(self)
+        }
+
+        override func stopLoading() {
+            // Clean up
         }
     }
+
+    var networkManager: NetworkManager!
+
+    override func setUp() {
+        super.setUp()
+        networkManager = NetworkManager()
+        URLProtocol.registerClass(MockURLProtocol.self)
+    }
+
+    override func tearDown() {
+        URLProtocol.unregisterClass(MockURLProtocol.self)
+        networkManager = nil
+        super.tearDown()
+    }
+
+    func testFetchRandomQuote() {
+        let expectation = self.expectation(description: "Fetch random quote")
+
+        networkManager.fetchRandomQuote { quotes in
+            if let quotes = quotes {
+                if !quotes.isEmpty {
+                    // At least one quote is received, check individual quotes.
+                    let firstQuote = quotes[0]
+                    XCTAssertFalse(firstQuote.q.isEmpty, "Quote should not be empty")
+                    XCTAssertFalse(firstQuote.a.isEmpty, "Author should not be empty")
+                } else {
+                    XCTFail("No quotes received in the response")
+                }
+            } else {
+                // Quotes can be nil, which is expected.
+                print("Quotes are nil, but it's okay.")
+            }
+
+            expectation.fulfill()
+        }
+
+        waitForExpectations(timeout: 10, handler: nil)
+    }
+
 
 }

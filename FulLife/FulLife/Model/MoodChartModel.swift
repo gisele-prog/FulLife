@@ -2,7 +2,7 @@
 //  MoodChartModel.swift
 //  FulLife
 //
-//  Created by Consultant on 10/15/23.
+//  Created by Joie Mukamisha on 10/15/23.
 //
 
 import SwiftUI

@@ -14,18 +14,13 @@ class MoodTrackingViewModel: ObservableObject {
     @Published var selectedDate = Date()
     @Published var additionalNotes = ""
 
-    let moodOptions = ["Happy", "Sad", "Angry", "Fear", "Excited", "Loved", "I don't know"]
+    let dataSource: MoodTrackingDataSource
 
-    func saveMoodItem(viewContext: NSManagedObjectContext) {
-        let newItem = Item(context: viewContext)
-        newItem.mood = selectedMood
-        newItem.timestamp = selectedDate
-        newItem.notes = additionalNotes
+    init(dataSource: MoodTrackingDataSource) {
+        self.dataSource = dataSource
+    }
 
-        do {
-            try viewContext.save()
-        } catch {
-            print("Error saving: \(error)")
-        }
+    func saveMoodItem(viewContext: NSManagedObjectContext) -> Result<Void, Error> {
+        return dataSource.saveMoodItem(selectedMood: selectedMood, selectedDate: selectedDate, additionalNotes: additionalNotes, viewContext: viewContext)
     }
 }

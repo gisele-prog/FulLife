@@ -7,11 +7,14 @@
 
 import Foundation
 
+protocol NetworkService {
+    func fetchRandomQuote(completion: @escaping ([Quote]?) -> Void)
+}
 
-class NetworkManager {
+class NetworkManager: NetworkService {
     static let shared = NetworkManager()
     
-    private init() {}
+    internal init() {}
     
     func fetchRandomQuote(completion: @escaping ([Quote]?) -> Void) {
         let url = URL(string: "https://zenquotes.io/api/random")!

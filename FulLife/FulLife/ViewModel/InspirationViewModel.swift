@@ -2,16 +2,23 @@
 //  InspirationViewModel.swift
 //  FulLife
 //
-//  Created by Consultant on 10/15/23.
+//  Created by Joie Mukamisha on 10/15/23.
 //
+
+
 
 import SwiftUI
 
 class InspirationViewModel: ObservableObject {
     @Published var quotes: [Quote] = []
+    private let networkService: NetworkService
+
+    init(networkService: NetworkService) {
+        self.networkService = networkService
+    }
 
     func fetchQuotes() {
-        NetworkManager.shared.fetchRandomQuote { fetchedQuotes in
+        networkService.fetchRandomQuote { fetchedQuotes in
             if let fetchedQuotes = fetchedQuotes {
                 DispatchQueue.main.async {
                     self.quotes = fetchedQuotes
@@ -20,3 +27,4 @@ class InspirationViewModel: ObservableObject {
         }
     }
 }
+

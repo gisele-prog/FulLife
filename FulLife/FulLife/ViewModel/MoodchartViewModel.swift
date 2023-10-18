@@ -2,7 +2,7 @@
 //  MoodchartViewModel.swift
 //  FulLife
 //
-//  Created by Consultant on 10/14/23.
+//  Created by Joie Mukamisha on 10/14/23.
 //
 
 
@@ -11,13 +11,10 @@ import SwiftUI
 import CoreData
 import SwiftUICharts
 
-
 class MoodPieChartViewModel: ObservableObject {
     @Published var moodData: [MoodCount] = []
 
-    func fetchMoodData() {
-        let context = PersistenceController.shared.container.viewContext
-
+    func fetchMoodData(from context: NSManagedObjectContext) {
         do {
             let items = try context.fetch(Item.fetchRequest()) as [Item]
             var moodCounts: [MoodCount] = []
@@ -34,7 +31,6 @@ class MoodPieChartViewModel: ObservableObject {
 
             moodData = moodCounts
         } catch {
-            
             print("Error fetching mood data: \(error)")
         }
     }

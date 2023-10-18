@@ -30,14 +30,14 @@ struct MoodHistoryView: View {
                             .font(.title)
                         
                         if let notes = item.notes {
-                            Text("My mood description:")
+                            Text("Description:")
                                 .font(.headline)
                                 .foregroundColor(.blue)
                             Text(notes)
                                 .font(.body)
                         }
                         
-                        Text("Date and Time:")
+                        Text("Date/Time:")
                             .font(.headline)
                             .foregroundColor(.blue)
 
@@ -63,13 +63,13 @@ struct MoodHistoryView: View {
         .navigationBarTitleDisplayMode(.inline)
 
         NavigationLink(destination: Inspiration()) {
-            Text("Explore Inspirations")
+            Text("Explore Motivations")
                 .padding()
                 .background(Color.blue)
                 .foregroundColor(.white)
                 .cornerRadius(8)
         }
-    }
+   }
 
     func deleteItems(at offsets: IndexSet) {
         for index in offsets {
@@ -79,3 +79,6 @@ struct MoodHistoryView: View {
         try? viewContext.save()
     }
 }
+
+
+

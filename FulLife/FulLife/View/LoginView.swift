@@ -1,44 +1,55 @@
 //
-//  LoginView.swift
+//  LoginViewModel.swift
 //  FulLife
 //
-//  Created by Joie Mukamisha on 10/15/23.
+//  Created by Joie Mukamisha on 10/16/23.
 //
+
 
 import SwiftUI
 import Firebase
 
 struct LoginView: View {
-    @State private var email: String = ""
-    @State private var password: String = ""
-    @State private var errorText: String?
-    @State private var navigateToHome: Bool = false
-    @State private var isSettingsPresented: Bool = false
+    @StateObject var viewModel = LoginViewModel()
 
     var body: some View {
         NavigationView {
             VStack(spacing: 16) {
-                TextField("Email", text: $email)
-                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                Text("FulLife")
+                    .font(.system(size: 40))
+                    .fontWeight(.bold)
+                    .foregroundColor(.purple)
+                    .padding(.top, 50)
 
-                SecureField("Password", text: $password)
+                TextField("Email", text: $viewModel.email)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
+                    .keyboardType(.emailAddress)
+                    .autocapitalization(.none)
+                    .disableAutocorrection(true)
+                    .padding(.horizontal)
 
-                if let error = errorText {
+                SecureField("Password", text: $viewModel.password)
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                    .padding(.horizontal)
+
+                if let error = viewModel.errorText {
                     Text(error)
                         .foregroundColor(.red)
+                        .padding(.top, 5)
                 }
 
-                Button(action: loginUser) {
+                Button(action: viewModel.loginUser) {
                     Text("Login")
                         .frame(maxWidth: .infinity)
                         .padding()
                         .background(Color.blue)
                         .foregroundColor(.white)
                         .cornerRadius(8)
+                        .padding(.top, 10)
                 }
+                .buttonStyle(PlainButtonStyle())
 
-                Button(action: registerUser) {
+                Button(action: viewModel.registerUser) {
                     Text("Register")
                         .frame(maxWidth: .infinity)
                         .padding()
@@ -46,55 +57,16 @@ struct LoginView: View {
                         .foregroundColor(.white)
                         .cornerRadius(8)
                 }
+                .buttonStyle(PlainButtonStyle())
 
-                NavigationLink(
-                    destination: HomeView(),
-                    isActive: $navigateToHome
-                ) {
+                NavigationLink(destination: HomeView(), isActive: $viewModel.isLoggedIn) {
                     EmptyView()
                 }
+                .isDetailLink(false)
             }
             .padding()
         }
-        
-    }
-
-    func handleError(_ error: Error?) {
-        if let errorCode = (error as NSError?)?.code {
-            switch errorCode {
-            case AuthErrorCode.invalidEmail.rawValue:
-                errorText = "Invalid email format."
-            case AuthErrorCode.wrongPassword.rawValue:
-                errorText = "Incorrect password."
-            case AuthErrorCode.emailAlreadyInUse.rawValue:
-                errorText = "Email already in use."
-            case AuthErrorCode.weakPassword.rawValue:
-                errorText = "Password is too weak."
-            default:
-                errorText = "An error occurred. Please try again."
-            }
-        }
-    }
-
-    func loginUser() {
-        Auth.auth().signIn(withEmail: email, password: password) { [self] authResult, error in
-            if let error = error {
-                handleError(error)
-            } else {
-                navigateToHome = true
-                errorText = nil
-            }
-        }
-    }
-
-    func registerUser() {
-        Auth.auth().createUser(withEmail: email, password: password) { [self] authResult, error in
-            if let error = error {
-                handleError(error)
-            } else {
-                navigateToHome = true
-                errorText = nil
-            }
-        }
+        .navigationViewStyle(StackNavigationViewStyle())
+       
     }
 }

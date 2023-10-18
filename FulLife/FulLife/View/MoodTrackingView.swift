@@ -5,25 +5,34 @@
 //  Created by Joie Mukamisha on 10/11/23.
 //
 
+
+
 import SwiftUI
+import CoreData
+
 
 struct MoodTrackingView: View {
     @Environment(\.managedObjectContext) private var viewContext
-    @StateObject private var viewModel = MoodTrackingViewModel()
+    @ObservedObject private var viewModel: MoodTrackingViewModel
+
+    init() {
+        let dataSource = MoodTrackingDataManager()
+        self.viewModel = MoodTrackingViewModel(dataSource: dataSource)
+    }
 
     var body: some View {
         NavigationView {
             Form {
                 Section(header: Text("How are you feeling?")) {
                     Picker("Select your mood", selection: $viewModel.selectedMood) {
-                        ForEach(viewModel.moodOptions, id: \.self) {
+                        ForEach(viewModel.dataSource.moodOptions, id: \.self) {
                             Text($0)
                         }
                     }
                     .pickerStyle(WheelPickerStyle())
                     .accessibility(label: Text("Mood Selector"))
                 }
-                
+
                 Section(header: Text("When did you feel this way?")) {
                     DatePicker("Date and Time", selection: $viewModel.selectedDate, in: ...Date(), displayedComponents: [.date, .hourAndMinute])
                         .labelsHidden()
@@ -36,7 +45,14 @@ struct MoodTrackingView: View {
                 }
 
                 Button(action: {
-                    viewModel.saveMoodItem(viewContext: viewContext)
+                    switch viewModel.saveMoodItem(viewContext: viewContext) {
+                    case .success:
+                        
+                        print("Data saved successfully")
+                    case .failure(let error):
+                      
+                        print("Error saving: \(error)")
+                    }
                 }) {
                     Text("Save")
                         .padding()

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		029CB4822ADF4CBA0058FFC6 /* MoodTrackingDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 029CB4812ADF4CBA0058FFC6 /* MoodTrackingDataModel.swift */; };
 		02A312002AD6EDEB009191AC /* FulLifeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A311FF2AD6EDEB009191AC /* FulLifeApp.swift */; };
 		02A312022AD6EDEB009191AC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A312012AD6EDEB009191AC /* ContentView.swift */; };
 		02A312042AD6EDED009191AC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 02A312032AD6EDED009191AC /* Assets.xcassets */; };
@@ -33,8 +34,7 @@
 		02A312762ADC63AD009191AC /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A312752ADC63AD009191AC /* LoginView.swift */; };
 		02A312782ADC69F8009191AC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 02A312772ADC69F8009191AC /* GoogleService-Info.plist */; };
 		02A3127A2ADC6C89009191AC /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 02A312792ADC6C89009191AC /* FirebaseAuth */; };
-		02AB67F42ADC934A005777D4 /* SignOutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02AB67F32ADC934A005777D4 /* SignOutViewController.swift */; };
-		02AB67F62ADC9640005777D4 /* Representable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02AB67F52ADC9640005777D4 /* Representable.swift */; };
+		02AB68032ADDAA4E005777D4 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02AB68022ADDAA4E005777D4 /* LoginViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +55,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		029CB4812ADF4CBA0058FFC6 /* MoodTrackingDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodTrackingDataModel.swift; sourceTree = "<group>"; };
 		02A311FC2AD6EDEB009191AC /* FulLife.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FulLife.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		02A311FF2AD6EDEB009191AC /* FulLifeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FulLifeApp.swift; sourceTree = "<group>"; };
 		02A312012AD6EDEB009191AC /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -82,8 +83,7 @@
 		02A312642ADC496A009191AC /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		02A312752ADC63AD009191AC /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		02A312772ADC69F8009191AC /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
-		02AB67F32ADC934A005777D4 /* SignOutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignOutViewController.swift; sourceTree = "<group>"; };
-		02AB67F52ADC9640005777D4 /* Representable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Representable.swift; sourceTree = "<group>"; };
+		02AB68022ADDAA4E005777D4 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -177,7 +177,6 @@
 		02A312302AD71DFB009191AC /* View */ = {
 			isa = PBXGroup;
 			children = (
-				02AB67F32ADC934A005777D4 /* SignOutViewController.swift */,
 				02A312642ADC496A009191AC /* HomeView.swift */,
 				02A312752ADC63AD009191AC /* LoginView.swift */,
 				02A312012AD6EDEB009191AC /* ContentView.swift */,
@@ -192,6 +191,7 @@
 		02A312612ADC2522009191AC /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				02AB68022ADDAA4E005777D4 /* LoginViewModel.swift */,
 				02A312472AD8D7D3009191AC /* MoodHistoryViewModel.swift */,
 				02A312492AD8DCB5009191AC /* MoodTrackingViewModel.swift */,
 				02A3125B2ADB18FF009191AC /* MoodchartViewModel.swift */,
@@ -203,6 +203,7 @@
 		02AB67F12ADC8B62005777D4 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				029CB4812ADF4CBA0058FFC6 /* MoodTrackingDataModel.swift */,
 				02A312082AD6EDED009191AC /* Persistence.swift */,
 				02A312502AD99933009191AC /* QuotesModel.swift */,
 				02A312622ADC4317009191AC /* MoodChartModel.swift */,
@@ -215,7 +216,6 @@
 			children = (
 				02A312332AD73693009191AC /* ItemFormatter.swift */,
 				02A312522AD99956009191AC /* QuoteServiceLayer.swift */,
-				02AB67F52ADC9640005777D4 /* Representable.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -359,10 +359,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				02AB68032ADDAA4E005777D4 /* LoginViewModel.swift in Sources */,
 				02A3125C2ADB18FF009191AC /* MoodchartViewModel.swift in Sources */,
 				02A312632ADC4317009191AC /* MoodChartModel.swift in Sources */,
 				02A312322AD7343D009191AC /* MoodHistoryView.swift in Sources */,
-				02AB67F42ADC934A005777D4 /* SignOutViewController.swift in Sources */,
 				02A312532AD99956009191AC /* QuoteServiceLayer.swift in Sources */,
 				02A312092AD6EDED009191AC /* Persistence.swift in Sources */,
 				02A312652ADC496A009191AC /* HomeView.swift in Sources */,
@@ -377,8 +377,8 @@
 				02A3120C2AD6EDED009191AC /* FulLife.xcdatamodeld in Sources */,
 				02A312762ADC63AD009191AC /* LoginView.swift in Sources */,
 				02A3122F2AD71C41009191AC /* MoodTrackingView.swift in Sources */,
-				02AB67F62ADC9640005777D4 /* Representable.swift in Sources */,
 				02A312552AD99A51009191AC /* InspirationView.swift in Sources */,
+				029CB4822ADF4CBA0058FFC6 /* MoodTrackingDataModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -548,8 +548,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -577,8 +576,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

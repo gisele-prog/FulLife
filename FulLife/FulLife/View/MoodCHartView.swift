@@ -11,7 +11,11 @@ import CoreData
 import SwiftUICharts
 
 struct MoodPieChartView: View {
-    @ObservedObject var chartViewModel = MoodPieChartViewModel()
+    @ObservedObject var chartViewModel: MoodPieChartViewModel
+    
+    init(viewModel: MoodPieChartViewModel) {
+        self.chartViewModel = viewModel
+    }
     
     var body: some View {
         VStack {
@@ -38,9 +42,11 @@ struct MoodPieChartView: View {
             }
         }
         .onAppear {
-            chartViewModel.fetchMoodData()
+            chartViewModel.fetchMoodData(from: PersistenceController.shared.container.viewContext)
         }
         .navigationBarTitle("Mood Chart")
         .navigationBarTitleDisplayMode(.inline)
+        
     }
+        
 }

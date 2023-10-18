@@ -6,13 +6,12 @@
 //
 
 
+
 import SwiftUI
 
-
-
 struct Inspiration: View {
-    @StateObject private var viewModel = InspirationViewModel()
-    @State private var isMoodPieChartViewPresented = false
+    @StateObject private var viewModel = InspirationViewModel(networkService: NetworkManager())
+    @State private var isMoodPieChartViewActive = false
 
     var body: some View {
         NavigationView {
@@ -24,7 +23,7 @@ struct Inspiration: View {
 
                     Text(quote.q)
                         .font(.body)
-                    
+
                     Text("Author:")
                         .font(.headline)
                         .foregroundColor(.blue)
@@ -39,20 +38,16 @@ struct Inspiration: View {
             .onAppear {
                 viewModel.fetchQuotes()
             }
-            .navigationBarTitle("Inspirational Quotes")
+            .navigationBarTitle("Motivational Quotes")
             .navigationBarItems(trailing:
-                Button(action: {
-                    isMoodPieChartViewPresented = true
-                }) {
+                    NavigationLink(destination: MoodPieChartView(viewModel: MoodPieChartViewModel()), isActive: $isMoodPieChartViewActive) {
                     Text("View Mood Chart")
                 }
             )
         }
         .navigationBarTitleDisplayMode(.inline)
         .navigationViewStyle(StackNavigationViewStyle())
-        .sheet(isPresented: $isMoodPieChartViewPresented) {
-            MoodPieChartView()
-        }
+        
     }
 }
 
